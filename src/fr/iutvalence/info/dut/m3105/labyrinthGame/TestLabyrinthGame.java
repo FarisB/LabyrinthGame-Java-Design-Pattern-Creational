@@ -16,6 +16,7 @@ public class TestLabyrinthGame
 	 *            command-line arguments (none expected here)
 	 */
 	public static void main(String[] args)
+	
 	{
 		Set<Position> blockPositions = new HashSet<Position>();
 		blockPositions.add(new Position(2,0));
