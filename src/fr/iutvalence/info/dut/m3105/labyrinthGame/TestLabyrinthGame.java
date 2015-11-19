@@ -16,7 +16,6 @@ public class TestLabyrinthGame
 	 *            command-line arguments (none expected here)
 	 */
 	public static void main(String[] args)
-	
 	{
 		Set<Position> blockPositions = new HashSet<Position>();
 		blockPositions.add(new Position(2,0));
@@ -26,7 +25,10 @@ public class TestLabyrinthGame
 		blockPositions.add(new Position(1,2));
 		blockPositions.add(new Position(3,2));
 		blockPositions.add(new Position(3,3));
+		Position pos = new Position(2, 3);
+		Position exitPos = new Position(2, 2);
 		
-		new LabyrinthGame(new Labyrinth(4, 4, blockPositions, new Position(3,1)), RobotArtificialIntelligence.makeRAI("DBAI")).play();
+
+		new LabyrinthGame(new LabyrinthBuilder().width(5).height(5).addForbiddenCellsPositions(pos).position(exitPos).getLabyrinth(), RobotArtificialIntelligence.makeRAI("DBAI")).play();
 	}
 }
